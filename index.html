@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<<<<<<< HEAD
+	<meta charset="utf-8">
+	<title>Lecture JSON</title>
+	<link rel="stylesheet" type="text/css" href="CSS/liste.css">
+=======
+	<title>Lecture JSON</title>
+>>>>>>> 73dd1095cdd6e38fed6b010081987f772d21a9ff
+	<script type="text/javascript" language="javascript" src="ifa_annuaire.json">
+	</script>
+</head>
+<body>
+
+	<h1> Liste promo IFA Developpeur Web - 2017</h1>
+
+<<<<<<< HEAD
+	<ul id="contenu">
+    </ul>
+
+	<script type="text/javascript">
+=======
+	<div id="contenu">
+    </div>
+
+	<script type="text/javascript">
+
+>>>>>>> 73dd1095cdd6e38fed6b010081987f772d21a9ff
+		/*
+		console.log("J'arrive");
+		console.log(myJson);
+		*/
+<<<<<<< HEAD
+		myJson.forEach( function(eleve) {
+		    //creation de la div
+		    var lienEleve = document.createElement("li");
+		    lienEleve.classList.add("eleve");
+=======
+
+		myJson.forEach( function(eleve) {
+
+		    //creation de la div
+		    var lienEleve = document.createElement("div");
+		    lienEleve.classList.add("eleve");
+
+>>>>>>> 73dd1095cdd6e38fed6b010081987f772d21a9ff
+		    // pour chaque élève je crée un paragraphe
+		    var pEleve = document.createElement("p");
+		    // avec pour titre le nom de l'élève
+		    var identiteEleve = document.createElement("h2");
+		    identiteEleve.textContent = eleve.nom + " " + eleve.prenom;
+<<<<<<< HEAD
+
+		    var boutonEleve = document.createElement("button");
+		    boutonEleve.textContent  = "Détail";
+		    boutonEleve.href="detail.html?nom="+ eleve.nom + "&prenom"+eleve.prenom; 
+		    // Ajout d'un gestionnaire
+		    boutonEleve.addEventListener("click", function (e) {
+		    	window.location.replace("detail.html?nom="+ eleve.nom + "&prenom"+eleve.prenom);
+		    	/*
+    			alert("On me demande " + eleve.nom + " " + eleve.prenom );
+				*/
+				});
+		    
+		    /*
+=======
+		    identiteEleve.style.color = "#428bca";
+		    
+>>>>>>> 73dd1095cdd6e38fed6b010081987f772d21a9ff
+		    // j'entre les différentes informations
+		    var qjsEleve = document.createElement("question1");
+		    qjsEleve.textContent = "Avez-vous déjà fait du JavaSrcipt ? ";
+		    qjsEleve.style.fontWeight= "bold" ;
+		    var rjsEleve = document.createElement("reponse1");
+		    rjsEleve.textContent = eleve.javascript;
+<<<<<<< HEAD
+		    */
+		    //creation des noeuds		    
+		    pEleve.appendChild(identiteEleve);
+		    pEleve.appendChild(boutonEleve);
+		    
+		    /*
+		    pEleve.appendChild(qjsEleve);
+		    pEleve.appendChild(rjsEleve);
+		    */
+		    // ajout du paragraphe Elève dans le DOM
+			lienEleve.appendChild(pEleve);
+		    document.getElementById("contenu").appendChild(lienEleve);
+		    
+		    
+		});
+=======
+		    
+
+		    //creation des noeuds		    
+		    pEleve.appendChild(identiteEleve);
+		    pEleve.appendChild(qjsEleve);
+		    pEleve.appendChild(rjsEleve);
+		    
+		    // ajout du paragraphe Elève dans le DOM
+			lienEleve.appendChild(pEleve);
+		    document.getElementById("contenu").appendChild(lienEleve);
+		});
+
+
+>>>>>>> 73dd1095cdd6e38fed6b010081987f772d21a9ff
+	</script>
+
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+
+h2{
+	color: #428bca;
+	width: 80%;	
+	margin: 3px;
+}
+
+li{
+	border: solid black;
+	margin-bottom: 10px;
+	padding-left: 10px;
+	list-style: none;	
+}
+
+p{
+	display: flex;
+	align-items: center;
+	margin: 0;
+}
+
+button{
+	height: 30px;	
+}
