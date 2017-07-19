@@ -1,26 +1,34 @@
 
+	
+  	// Je recupère la liste
+  	var dataListe = myJson;
+  	// Je récupère l'url
+  	var url = window.location;
+  	// je récupère l'id de l'élève
+  	var eleveId = url.hash;
+  	console.log(url);
+  	console.log("je suis sur la page détail de l'élève avec l'id :" + eleveId);
+  	
+  	// enlever le # devant l'id et le transformer en float pour pouvoir le chercher dans ma liste 
+  	eleveId = parseFloat(eleveId.substring(1));
+  	console.log(typeof eleveId);
+  	
 
-    function $_GET(param) {
-    	console.log("Fonction Get, param ", param);
-	var vars = {};
-	window.location.href.replace( location.hash, '' ).replace( 
-		/[?&]+([^=&]+)=?([^&]*)?/gi, // regexp
-		function( m, key, value ) { // callback
-			vars[key] = value !== undefined ? value : '';
-		}
-	);
+  	//	indexOf permet un accès plus rapide, je récupère l'objet
+  	var myIndex = dataListe.findIndex(function(i){ return i.id === eleveId });
+  	console.log(myIndex);
 
-	if ( param ) {
-		return vars[param] ? vars[param] : null;	
-	}
-	return vars;
-	}
-
-	var $_GET = $_GET(),
-    nom = $_GET['nom'],
-    prenom = $_GET['prenom'];
-
-    /* myJson. */
+  	var monEleve=dataListe[myIndex];
+  	
 
     var d=document.getElementById("titre");
-    d.innerHTML="Elève "+ nom +" "+ prenom;
+    d.innerHTML="Elève "+ eleveId; //+" "+ prenom;
+
+    var contenu = document.getElementById("contenu");
+    var pEleve = document.createElement("p");
+	// avec pour titre le nom de l'élève
+	var identiteEleve = document.createElement("h2");
+	identiteEleve.textContent = monEleve.nom + " " + monEleve.prenom;
+	// j'ajoute à mon document
+	pEleve.appendChild(identiteEleve);
+	contenu.appendChild(identiteEleve);
